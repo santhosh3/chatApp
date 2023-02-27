@@ -7,12 +7,10 @@ import './App.css';
 function App() {
   return (
     <div className="App">
-     <BrowserRouter>
      <Routes>
      <Route exact path='/chats' element={<ChatPage/>}></Route>
      <Route exact path='/' element={<HomePage/>}></Route>
      </Routes>
-     </BrowserRouter>
     </div>
   );
 }

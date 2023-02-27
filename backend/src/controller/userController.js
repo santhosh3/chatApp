@@ -37,7 +37,6 @@ function generateToken(id){
 
 async function registerUser(req,res){
     try {
-        console.log(__dirname);
         const {name, email, password,image} = req.body;
           if(!name || !email || !password){
             return res.status(400).send({status:false,message:"Please Enter all the fields"});
@@ -46,6 +45,7 @@ async function registerUser(req,res){
           if(userExist){
             return res.status(400).send({status:false,message:"User already exists"});
           }
+          
         const copyFile = promisify(fs.copyFile);
         const sourcePath = req.file.path;
         const originalFilename = req.file.originalname;
