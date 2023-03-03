@@ -20,6 +20,7 @@ const upload = multer({
 
 const {allUsers,accessChat,fetchChats,createGroupChat,remaneGroup,removeFromGroup,addToGroup} = require("../controller/chatController");
 const { registerUser, loginUser, showImage } = require("../controller/userController");
+const {sendMessage, allMessages} = require("../controller/messageController");
 const { protect } = require("../middleware/authMiddleware");
 
 router.post('/post',upload.single('image'),registerUser)
@@ -34,6 +35,7 @@ router.put('/rename', protect, remaneGroup);
 router.post('/groupremove', protect, removeFromGroup);
 router.put('/groupadd', protect, addToGroup);
 
-
+router.post('/sendMessage', protect, sendMessage);
+router.get('/:chatId', protect, allMessages);
 
 module.exports = router

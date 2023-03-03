@@ -23,7 +23,6 @@ function MyChats({fetchAgain}) {
      },
    });
       const data = await response.json();
-      console.log(data)
       setChats(data);
     } catch (error) {
       console.log(error)

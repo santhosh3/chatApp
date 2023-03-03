@@ -21,6 +21,7 @@ function SideDrawer() {
   const user = JSON.parse(localStorage.getItem("user"))
    
   const {
+    setSelectedChat,
     set,
     notification,
     setNotification,
@@ -80,7 +81,7 @@ function SideDrawer() {
       });
       console.log(data)
       if(!chats.find((c) => c._id === data._id)) setChats([data,...chats]);
-      set(data);
+      setSelectedChat(data);
       setLoadingChat(false);
       onClose();
     } catch (error) {
