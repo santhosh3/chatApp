@@ -4,6 +4,7 @@
   "description": "chat Application",
   "main": "index.js",
   "scripts": {
+    "server":"node index",
     "start": "nodemon index"
   },
   "author": "santhosh",
