@@ -13,7 +13,7 @@ app.use(bodyParser.json());
 async function connectDB(){
    try {
     mongoose.set('strictQuery', false);
-    await mongoose.connect('mongodb://localhost:27017/socket',{ useNewUrlParser:true,useUnifiedTopology:true});
+    await mongoose.connect('mongodb+srv://santhosh:12345@backend.sx1ylzc.mongodb.net/socket',{ useNewUrlParser:true,useUnifiedTopology:true});
     console.log("DB is connected successfully")
    } catch (error) {
     console.log(error);
